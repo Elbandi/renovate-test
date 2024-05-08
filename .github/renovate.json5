@@ -1,7 +1,7 @@
 {
   repositories: ['Elbandi/renovate-test'],
   extends: [
-    'config:base',
+    'config:recommended',
 
     // Make sure we get a single PR combining all updates
     'group:all',
