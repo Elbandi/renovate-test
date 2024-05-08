@@ -7,6 +7,32 @@
     'group:all',
   ],
 
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "repology"
+      ],
+      "matchPackagePatterns": [
+        "^alpine_3_12/"
+      ],
+      "groupName": "alpine packages",
+      "groupSlug": "alpine"
+    }
+  ],
+  "customManagers": [
+    {
+      "description": "Update packages set in Dockerfiles",
+      "customType": "regex",
+      "fileMatch": [
+        "^Dockerfile.*$"
+      ],
+      "matchStrings": [
+        "#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION=\"(?<currentValue>.*)\"\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+
   // Disable dependency dashboard
   dependencyDashboard: false,
 
