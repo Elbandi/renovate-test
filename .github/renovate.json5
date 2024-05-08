@@ -13,6 +13,26 @@
         "repology"
       ],
       "matchPackagePatterns": [
+        "^debian_"
+      ],
+      "groupName": "debian packages",
+      "groupSlug": "debian"
+    },
+    {
+      "matchDatasources": [
+        "repology"
+      ],
+      "matchPackagePatterns": [
+        "^ubuntu_"
+      ],
+      "groupName": "ubuntu packages",
+      "groupSlug": "ubuntu"
+    },
+    {
+      "matchDatasources": [
+        "repology"
+      ],
+      "matchPackagePatterns": [
         "^alpine_3_12/"
       ],
       "groupName": "alpine packages",
